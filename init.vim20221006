@@ -1,0 +1,87 @@
+" 시작 (플러그인 설치 경로)
+call plug#begin('~/.vim/plugged')
+
+" 설치하고 싶은 플러그인 (예, NERDTree)
+Plug 'scrooloose/nerdtree'
+Plug 'preservim/tagbar'
+Plug 'vim-airline/vim-airline'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'neoclide/coc.nvim'
+Plug 'pangloss/vim-javascript'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'alampros/vim-styled-jsx'
+Plug 'moll/vim-node'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx']}
+Plug 'kristijanhusak/defx-icons'
+Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'neovim/nvim-lspconfig'
+Plug 'tami5/lspsaga.nvim', { 'branch': 'nvim51' }
+Plug 'folke/lsp-colors.nvim'
+Plug 'L3MON4D3/LuaSnip' 
+Plug 'hrsh7th/cmp-nvim-lsp' 
+Plug 'hrsh7th/cmp-buffer' 
+Plug 'hrsh7th/nvim-cmp' 
+Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' } 
+Plug 'kyazdani42/nvim-web-devicons' 
+Plug 'onsails/lspkind-nvim' 
+Plug 'nvim-lua/popup.nvim' 
+Plug 'nvim-lua/plenary.nvim' 
+Plug 'nvim-telescope/telescope.nvim' 
+Plug 'windwp/nvim-autopairs'
+"수정 시 자동으로 영문으로 변경
+
+Plug 'othree/yajs.vim', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'othree/es.next.syntax.vim', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'othree/html5.vim'
+Plug 'maxmellon/vim-jsx-pretty', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'], 'do': 'npm install' }
+" svelte
+Plug 'leafOfTree/vim-svelte-theme'
+Plug 'evanleck/vim-svelte'
+Plug 'pangloss/vim-javascript'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'codechips/coc-svelte', {'do': 'npm install'}
+
+" 디렉토리 전체 검색관련
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+" 토글텀 관련
+Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
+
+" 플러그인 시스템 초기화
+call plug#end()
+
+" 이하 nvim 설정
+
+syntax on "문법 하이라라이팅
+set nu
+set mouse=a
+set hlsearch
+set tabstop=2 shiftwidth=2 expandtab ":retab
+set list listchars=tab:>-,trail:~,eol:$ "탭, 공백, 파일마지막 심볼 표시
+
+" ------------------------------------
+" 편집 모드 
+" ------------------------------------
+" jk 와 kj 를 <ESC> 키로 맵핑
+inoremap jk <ESC>
+inoremap kj <ESC>
+
+" All Grep 커맨드 적용
+command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
+
+" set
+autocmd TermEnter term://*toggleterm#*
+      \ tnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
+
+" By applying the mappings this way you can pass a count to your
+" mapping to open a specific window.
+" For example: 2<C-t> will open terminal 2
+nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
+inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>
+
+
