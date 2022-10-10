@@ -13,6 +13,7 @@ packer.startup(function(use)
     requires = { 'tjdevries/colorbuddy.nvim' }
   }
   use 'kyazdani42/nvim-web-devicons' -- File icons
+  use 'glepnir/lspsaga.nvim' -- LSP UIs
   use 'hoob3rt/lualine.nvim' -- Statusline
   use 'L3MON4D3/LuaSnip' -- Snippet
   use 'onsails/lspkind-nvim' -- vscode-like pictograms
@@ -24,6 +25,7 @@ packer.startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
+  use 'hrsh7th/cmp-nvim-lsp-signature-help'
 
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
