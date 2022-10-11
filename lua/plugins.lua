@@ -44,4 +44,10 @@ packer.startup(function(use)
 
   use 'lewis6991/gitsigns.nvim'
   use 'dinhhuy258/git.nvim' -- For git blame & browse
+
+  -- svelte
+  use 'evanleck/vim-svelte'
+  use 'pangloss/vim-javascript'
+  use 'HerringtonDarkholme/yats.vim'
+  use 'neoclide/coc.nvim'
 end)

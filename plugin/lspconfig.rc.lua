@@ -18,6 +18,12 @@ nvim_lsp.tsserver.setup {
   cmd = { "typescript-language-server", "--stdio" }
 }
 
+-- svelte
+nvim_lsp.svelte.setup {
+  filetypes = { "svelte" },
+  cmd = { "svelteserver", "--stdio" }
+}
+
 -- brew install lua-language-server
 nvim_lsp.sumneko_lua.setup {
   on_attach = on_attach,
