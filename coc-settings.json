@@ -1,7 +1,0 @@
-{
-  "svelte.enable-ts-plugin": true,
-  "coc.preferences.extensionUpdateCheck": "daily",
-  "diagnostic.checkCurrentLine": true,
-  "tsserver.enableJavascript": false,
-  "eslint.autoFixOnSave": true
-}
