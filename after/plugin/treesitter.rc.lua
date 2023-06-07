@@ -22,7 +22,8 @@ ts.setup {
     "html",
     "lua",
     "svelte",
-    "javascript"
+    "javascript",
+    "vue"
   },
   autotag = {
     enable = true,

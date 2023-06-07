@@ -133,29 +133,47 @@ nvim_lsp.vuels.setup {
   capabilities = capabilities,
   settings = {
     vetur = {
-      completion = {
-        autoImport = true,
-        useScaffoldSnippets = true
-      },
-      format = {
-        defaultFormatter = {
-          html = "none",
-          js = "prettier",
-          ts = "prettier",
-        }
+      experimental = {
+        templateInterpolationService = true,
       },
       validation = {
-        template = true,
-        script = true,
-        style = true,
         templateProps = true,
-        interpolation = true
       },
-      experimental = {
-        templateInterpolationService = true
-      }
-    }
+      completion = {
+        tagCasing = 'initial',
+        autoImport = true,
+        useScaffoldSnippets = true,
+      },
+    },
   },
+  flags = {
+    debounce_text_changes = 150,
+  },
+  --   settings = {
+  --     vetur = {
+  --       completion = {
+  --         autoImport = true,
+  --         useScaffoldSnippets = true
+  --       },
+  --       format = {
+  --         defaultFormatter = {
+  --           html = "none",
+  --           js = "prettier",
+  --           ts = "prettier",
+  --         }
+  --       },
+  --       validation = {
+  --         template = true,
+  --         script = true,
+  --         style = true,
+  --         templateProps = true,
+  --         interpolation = true
+  --       },
+  --       experimental = {
+  --         templateInterpolationService = true
+  --       }
+  --     }
+  --   },
 }
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
